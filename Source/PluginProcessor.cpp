@@ -26,10 +26,10 @@ ConvolutionPluginAudioProcessor::ConvolutionPluginAudioProcessor()
 
     int numTries = 0;
 
-    while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
+    while (! dir.getChildFile("dev").exists() && numTries++ < 15)
         dir = dir.getParentDirectory();
     
-    convolver.loadImpulseResponse(dir.getChildFile("Resources").getChildFile("guitar_amp.wav"), juce::dsp::Convolution::Stereo::yes, juce::dsp::Convolution::Trim::no, 1024);
+    convolver.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("guitar_amp.wav"), juce::dsp::Convolution::Stereo::yes, juce::dsp::Convolution::Trim::yes, 1024);
 }
 
 ConvolutionPluginAudioProcessor::~ConvolutionPluginAudioProcessor()

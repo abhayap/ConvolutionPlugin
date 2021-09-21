@@ -35,7 +35,7 @@ private:
     ConvolutionPluginAudioProcessor& audioProcessor;
     
     juce::Slider midiVolume;
-    juce::ToggleButton reverbButton { "Male" };
+    juce::ToggleButton reverbButton { "Reverb" };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConvolutionPluginAudioProcessorEditor)
 };
