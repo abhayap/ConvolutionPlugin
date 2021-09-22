@@ -58,7 +58,8 @@ public:
 
 private:
     //==============================================================================
-    juce::dsp::Convolution convolver;
+    juce::dsp::Convolution convolverL;
+    juce::dsp::Convolution convolverR;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConvolutionPluginAudioProcessor)
 };

@@ -29,7 +29,8 @@ ConvolutionPluginAudioProcessor::ConvolutionPluginAudioProcessor()
     while (! dir.getChildFile("dev").exists() && numTries++ < 15)
         dir = dir.getParentDirectory();
     
-    convolver.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("guitar_amp.wav"), juce::dsp::Convolution::Stereo::yes, juce::dsp::Convolution::Trim::yes, 1024);
+    convolverL.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 0);
+    convolverR.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 0);
 }
 
 ConvolutionPluginAudioProcessor::~ConvolutionPluginAudioProcessor()
@@ -101,7 +102,8 @@ void ConvolutionPluginAudioProcessor::changeProgramName (int index, const juce::
 //==============================================================================
 void ConvolutionPluginAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    convolver.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 2 });
+    convolverL.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
+    convolverR.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
 }
 
 void ConvolutionPluginAudioProcessor::releaseResources()
@@ -150,7 +152,19 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
     // this code if your algorithm always overwrites all the output channels.
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
-
+    
+    if (reverbOn) {
+        auto block = juce::dsp::AudioBlock<float>(buffer);
+        auto singleBlockL = block.getSingleChannelBlock(0);
+        auto contextL = juce::dsp::ProcessContextReplacing<float>(singleBlockL);
+        convolverL.process(contextL);
+        singleBlockL *= 6.0f;
+        auto singleBlockR = block.getSingleChannelBlock(1);
+        auto contextR = juce::dsp::ProcessContextReplacing<float>(singleBlockR);
+        convolverR.process(contextR);
+        singleBlockR *= 6.0f;
+    }
+    
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
     // Make sure to reset the state if your inner loop is processing
@@ -165,12 +179,6 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
         {
             channelData[samp] = outputVol * inputData[samp];
         }
-    }
-    
-    if (reverbOn) {
-        auto block = juce::dsp::AudioBlock<float>(buffer);
-        auto context = juce::dsp::ProcessContextReplacing<float>(block);
-        convolver.process(context);
     }
 }
 
