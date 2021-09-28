@@ -58,6 +58,12 @@ public:
 
 private:
     //==============================================================================
+    static constexpr int ARRAY_MICROPHONES = 64;
+    static constexpr int ARRAY_HARMONICS = 36;
+    static constexpr int ARRAY_ORDER = 5;
+    
+    std::vector<std::unique_ptr<juce::dsp::Convolution>> convolvers;
+    
     juce::dsp::Convolution convolverL;
     juce::dsp::Convolution convolverR;
     

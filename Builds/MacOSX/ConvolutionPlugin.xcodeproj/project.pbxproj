@@ -13,9 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
-				C0C998DB88B4819104C2CC66,
 				2A67380D5C041992608355BF,
-				83F62B26BBA3D266A93CA67A,
 				8510D1F43FD8FA7A534453AE,
 			);
 			name = "ConvolutionPlugin - All";
@@ -27,7 +25,6 @@
 		09BF63FFCC2C7915460372ED /* CoreAudioKit.framework */ = {isa = PBXBuildFile; fileRef = A5ADDFB160C88A2E515598AB; };
 		0A6ADC775E154B8C4E22F83C /* include_juce_audio_plugin_client_AU_2.mm */ = {isa = PBXBuildFile; fileRef = 655CA173A93D433EE919BBE6; };
 		11995F26A9CFBE80842BF2B6 /* include_juce_audio_basics.mm */ = {isa = PBXBuildFile; fileRef = 498826709863828A6B5774BD; };
-		1610A90B3614DB018CC74CA8 /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXBuildFile; fileRef = 98F4131A83409113FD425CDD; };
 		16B306F3795C737E490D300B /* CoreMIDI.framework */ = {isa = PBXBuildFile; fileRef = 50E1C08E0F9F1AA786BCEC67; };
 		192E4C64426DD533A4E53486 /* AU */ = {isa = PBXBuildFile; fileRef = B1845B903FF06444E0B1510C; };
 		197451A7AE469C8D0F50820B /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = 18C4C2B6D0EFC0196835D1A3; };
@@ -36,8 +33,6 @@
 		2831D4C62A18D0AC1376C885 /* include_juce_audio_formats.mm */ = {isa = PBXBuildFile; fileRef = 393DBC1EDEDBAECD71FC9BAA; };
 		3362D16C7A9D10B33B7886B5 /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = 5EC85D9A876459F4B677B858; };
 		33AFD9D52B6D681D5E51AB7F /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = 18C2F16C697FA2B370638846; };
-		34E84D1F95BDFBEDE14D63A8 /* Standalone Plugin */ = {isa = PBXBuildFile; fileRef = 61AA9446C885CC3CEC6DEDBA; };
-		38B92E32233415E8EBB3168C /* VST3 */ = {isa = PBXBuildFile; fileRef = 85EF02EAA777E70F0E0579E2; };
 		3A67059D7D5791664757AC41 /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXBuildFile; fileRef = 72B7E814C80D2457B8340199; };
 		5AA6FEE2AA4670D6E1AF5DA0 /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXBuildFile; fileRef = 709650D05E537A9EC0A477FC; };
 		5B304E56139897B6FF3335B8 /* DiscRecording.framework */ = {isa = PBXBuildFile; fileRef = DDC0B4E429001FA599109DA5; };
@@ -46,7 +41,6 @@
 		779B5279A4B40FF9391EA8BA /* include_juce_dsp.mm */ = {isa = PBXBuildFile; fileRef = 90B298FC038F3DCFB9B94EB7; };
 		803EDFF0A699546F9B2C47B1 /* WebKit.framework */ = {isa = PBXBuildFile; fileRef = 09CF20EC6C109E1BBCF9AF4C; };
 		8B30AA8D18246CEE33A5C9EA /* include_juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = 85B13F6F10833B7C7F48F2C9; };
-		92AF91C2AD2A19C437FA8033 /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXBuildFile; fileRef = A5D708F1335DD2428CAF1945; };
 		9728E9EC2AF0529F2469AC70 /* Shared Code */ = {isa = PBXBuildFile; fileRef = CEC5AF650EFDEC0AB95AA885; };
 		A2A04F5142111B7853C06E21 /* Cocoa.framework */ = {isa = PBXBuildFile; fileRef = C90AFF761F3D0C51C5F32AAA; };
 		AC2FB3452D5C92388152AF05 /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = 1A6F0A10FBF8D923D15A2933; };
@@ -93,28 +87,22 @@
 		59719470BE8186A3E3B64671 /* PluginProcessor.cpp */ /* PluginProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginProcessor.cpp; path = ../../Source/PluginProcessor.cpp; sourceTree = SOURCE_ROOT; };
 		5A0E4A2F8F5780FC3AA161E9 /* juce_dsp */ /* juce_dsp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_dsp; path = /Users/aparthy/dev/JUCE/modules/juce_dsp; sourceTree = "<absolute>"; };
 		5EC85D9A876459F4B677B858 /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
-		61AA9446C885CC3CEC6DEDBA /* Standalone Plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConvolutionPlugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641E7BD1EBD5C9D9DEDA43AF /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
 		655CA173A93D433EE919BBE6 /* include_juce_audio_plugin_client_AU_2.mm */ /* include_juce_audio_plugin_client_AU_2.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_AU_2.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm; sourceTree = SOURCE_ROOT; };
 		66F62E356AB21709F6EE15EB /* include_juce_audio_plugin_client_utils.cpp */ /* include_juce_audio_plugin_client_utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_utils.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_utils.cpp; sourceTree = SOURCE_ROOT; };
 		6CE9FF9EC7E77F5DC433DBEA /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/aparthy/dev/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 		709650D05E537A9EC0A477FC /* include_juce_audio_plugin_client_VST_utils.mm */ /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		72B7E814C80D2457B8340199 /* include_juce_audio_plugin_client_AU.r */ /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXFileReference; lastKnownFileType = file.r; name = include_juce_audio_plugin_client_AU.r; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU.r; sourceTree = SOURCE_ROOT; };
-		77280B5F74D3525941C429C5 /* Info-Standalone_Plugin.plist */ /* Info-Standalone_Plugin.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Standalone_Plugin.plist"; path = "Info-Standalone_Plugin.plist"; sourceTree = SOURCE_ROOT; };
-		7B496286E2AEAA199BAAE09A /* Info-VST3.plist */ /* Info-VST3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-VST3.plist"; path = "Info-VST3.plist"; sourceTree = SOURCE_ROOT; };
 		7BE00FB4D1BCEF7E3C27A838 /* PluginEditor.cpp */ /* PluginEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = SOURCE_ROOT; };
 		822E5A3B7934B9908A15A654 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = /Users/aparthy/dev/JUCE/modules/juce_audio_formats; sourceTree = "<absolute>"; };
 		85B13F6F10833B7C7F48F2C9 /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
-		85EF02EAA777E70F0E0579E2 /* VST3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConvolutionPlugin.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E6B44DC6509529DB4124F9 /* include_juce_gui_extra.mm */ /* include_juce_gui_extra.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_extra.mm; path = ../../JuceLibraryCode/include_juce_gui_extra.mm; sourceTree = SOURCE_ROOT; };
 		8AFFF1D928460B1F04CB5262 /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		90B298FC038F3DCFB9B94EB7 /* include_juce_dsp.mm */ /* include_juce_dsp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_dsp.mm; path = ../../JuceLibraryCode/include_juce_dsp.mm; sourceTree = SOURCE_ROOT; };
 		90DD678F312646520C8661CF /* juce_audio_utils */ /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_utils; path = /Users/aparthy/dev/JUCE/modules/juce_audio_utils; sourceTree = "<absolute>"; };
-		98F4131A83409113FD425CDD /* include_juce_audio_plugin_client_VST3.cpp */ /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_VST3.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp; sourceTree = SOURCE_ROOT; };
 		9C73FC9D05871FE245261307 /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
 		9CC5660F00E98A829A4E3418 /* Carbon.framework */ /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		A5ADDFB160C88A2E515598AB /* CoreAudioKit.framework */ /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
-		A5D708F1335DD2428CAF1945 /* include_juce_audio_plugin_client_Standalone.cpp */ /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_Standalone.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp; sourceTree = SOURCE_ROOT; };
 		AE847613A103B15FC9EE9680 /* juce_audio_processors */ /* juce_audio_processors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_processors; path = /Users/aparthy/dev/JUCE/modules/juce_audio_processors; sourceTree = "<absolute>"; };
 		B0657A0B0E2EE8BF942CEB06 /* juce_audio_basics */ /* juce_audio_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_basics; path = /Users/aparthy/dev/JUCE/modules/juce_audio_basics; sourceTree = "<absolute>"; };
 		B1845B903FF06444E0B1510C /* AU */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConvolutionPlugin.component; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,49 +116,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		08BCB9D8680D11741A82E021 = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7BE051DFD1C11F9DB132D22,
-				27322511C91747D2A5E58176,
-				AF762C7C71E44F762D5F0F89,
-				A2A04F5142111B7853C06E21,
-				B850E73D4D7A4D042F798098,
-				09BF63FFCC2C7915460372ED,
-				16B306F3795C737E490D300B,
-				5B304E56139897B6FF3335B8,
-				AD249D51137DFA14960D4BD8,
-				C8FA183D79D303B4F6F586BD,
-				AC2FB3452D5C92388152AF05,
-				803EDFF0A699546F9B2C47B1,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A02B0C17BCFAB6C8774B73AB = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				681894916D009CED580CBD77,
-				B7BE051DFD1C11F9DB132D22,
-				27322511C91747D2A5E58176,
-				AF762C7C71E44F762D5F0F89,
-				A2A04F5142111B7853C06E21,
-				B850E73D4D7A4D042F798098,
-				09BF63FFCC2C7915460372ED,
-				16B306F3795C737E490D300B,
-				5B304E56139897B6FF3335B8,
-				AD249D51137DFA14960D4BD8,
-				C8FA183D79D303B4F6F586BD,
-				AC2FB3452D5C92388152AF05,
-				803EDFF0A699546F9B2C47B1,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBBC191AE8D4A0959B525BAD = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 				B7BE051DFD1C11F9DB132D22,
 				27322511C91747D2A5E58176,
 				AF762C7C71E44F762D5F0F89,
@@ -192,9 +142,7 @@
 		172AA21C78AD24A1EBD7EF88 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85EF02EAA777E70F0E0579E2,
 				B1845B903FF06444E0B1510C,
-				61AA9446C885CC3CEC6DEDBA,
 				CEC5AF650EFDEC0AB95AA885,
 			);
 			name = Products;
@@ -209,10 +157,8 @@
 				72B7E814C80D2457B8340199,
 				02A1DBF54C6A9608EE786D72,
 				655CA173A93D433EE919BBE6,
-				A5D708F1335DD2428CAF1945,
 				66F62E356AB21709F6EE15EB,
 				709650D05E537A9EC0A477FC,
-				98F4131A83409113FD425CDD,
 				5448959293FF418F7DA21212,
 				270785B7DA4073CE049097EC,
 				18C2F16C697FA2B370638846,
@@ -284,9 +230,7 @@
 		B0CC7D4DB3BBD6B830334A78 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7B496286E2AEAA199BAAE09A,
 				38464ED9CADAC0A8D2FD7CB5,
-				77280B5F74D3525941C429C5,
 				641E7BD1EBD5C9D9DEDA43AF,
 			);
 			name = Resources;
@@ -329,24 +273,6 @@
 			productReference = CEC5AF650EFDEC0AB95AA885;
 			productType = "com.apple.product-type.library.static";
 		};
-		76C59EA780D1284BBF573E96 /* ConvolutionPlugin - VST3 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 841D8B2E82EF3F84D2107C1B;
-			buildPhases = (
-				7EFEC019994C8F671A6D57D9,
-				A9F59B791E5DD791A0F415BC,
-				08BCB9D8680D11741A82E021,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D56159085D0F2071030FEB7A,
-			);
-			name = "ConvolutionPlugin - VST3";
-			productName = ConvolutionPlugin;
-			productReference = 85EF02EAA777E70F0E0579E2;
-			productType = "com.apple.product-type.bundle";
-		};
 		8FA27B728A9506347A7E241C /* ConvolutionPlugin - AU */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E012462B05D4568F2E3DD8F;
@@ -365,24 +291,6 @@
 			productName = ConvolutionPlugin;
 			productReference = B1845B903FF06444E0B1510C;
 			productType = "com.apple.product-type.bundle";
-		};
-		D47B943BA3C59CA0D36A821E /* ConvolutionPlugin - Standalone Plugin */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 06FE17B0F56FF989D248A3A1;
-			buildPhases = (
-				47F5C705EEC6DA9558873D47,
-				F3DAAC315BC9DE474D0CB2D6,
-				DBBC191AE8D4A0959B525BAD,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6C11DE81A7EFF646BABC10CA,
-			);
-			name = "ConvolutionPlugin - Standalone Plugin";
-			productName = ConvolutionPlugin;
-			productReference = 61AA9446C885CC3CEC6DEDBA;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -437,51 +345,7 @@
 							};
 						};
 					};
-					76C59EA780D1284BBF573E96 = {
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-							com.apple.HardenedRuntime = {
-								enabled = 0;
-							};
-							com.apple.InAppPurchase = {
-								enabled = 0;
-							};
-							com.apple.InterAppAudio = {
-								enabled = 0;
-							};
-							com.apple.Push = {
-								enabled = 0;
-							};
-							com.apple.Sandbox = {
-								enabled = 0;
-							};
-						};
-					};
 					8FA27B728A9506347A7E241C = {
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-							com.apple.HardenedRuntime = {
-								enabled = 0;
-							};
-							com.apple.InAppPurchase = {
-								enabled = 0;
-							};
-							com.apple.InterAppAudio = {
-								enabled = 0;
-							};
-							com.apple.Push = {
-								enabled = 0;
-							};
-							com.apple.Sandbox = {
-								enabled = 0;
-							};
-						};
-					};
-					D47B943BA3C59CA0D36A821E = {
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -517,31 +381,13 @@
 			projectRoot = "";
 			targets = (
 				29EDCE97B015ECCB1CEA2266,
-				76C59EA780D1284BBF573E96,
 				8FA27B728A9506347A7E241C,
-				D47B943BA3C59CA0D36A821E,
 				0C706CBE67891C9C395C3B75,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		47F5C705EEC6DA9558873D47 = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C35A80845B28AB4B5D76AFFF,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7EFEC019994C8F671A6D57D9 = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C35A80845B28AB4B5D76AFFF,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B34F373A786CD9C1304FA939 = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,14 +410,6 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A9F59B791E5DD791A0F415BC = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1610A90B3614DB018CC74CA8,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CBE0DB9CDE77062876B09A78 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,14 +442,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3DAAC315BC9DE474D0CB2D6 = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92AF91C2AD2A19C437FA8033,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -623,23 +453,7 @@
 			isa = PBXTargetDependency;
 			target = 8FA27B728A9506347A7E241C;
 		};
-		6C11DE81A7EFF646BABC10CA = {
-			isa = PBXTargetDependency;
-			target = 0C706CBE67891C9C395C3B75;
-		};
-		83F62B26BBA3D266A93CA67A = {
-			isa = PBXTargetDependency;
-			target = D47B943BA3C59CA0D36A821E;
-		};
 		8510D1F43FD8FA7A534453AE = {
-			isa = PBXTargetDependency;
-			target = 0C706CBE67891C9C395C3B75;
-		};
-		C0C998DB88B4819104C2CC66 = {
-			isa = PBXTargetDependency;
-			target = 76C59EA780D1284BBF573E96;
-		};
-		D56159085D0F2071030FEB7A = {
 			isa = PBXTargetDependency;
 			target = 0C706CBE67891C9C395C3B75;
 		};
@@ -681,12 +495,12 @@
 					"JUCE_VST3_CAN_REPLACE_VST2=0",
 					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
 					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
+					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
+					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Name=\\\"ConvolutionPlugin\\\"",
@@ -737,7 +551,6 @@
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/aparthy/dev/JUCE/modules",
 					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
@@ -746,119 +559,10 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
 				PRODUCT_NAME = "ConvolutionPlugin";
 				SKIP_INSTALL = YES;
-				USE_HEADERMAP = NO;
-				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
-			};
-			name = Release;
-		};
-		0A4D05A1817D5F74547B2310 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				DEAD_CODE_STRIPPING = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"JUCE_DISPLAY_SPLASH_SCREEN=0",
-					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x60102",
-					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_processors=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_utils=1",
-					"JUCE_MODULE_AVAILABLE_juce_core=1",
-					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
-					"JUCE_MODULE_AVAILABLE_juce_dsp=1",
-					"JUCE_MODULE_AVAILABLE_juce_events=1",
-					"JUCE_MODULE_AVAILABLE_juce_graphics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_extra=1",
-					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
-					"JUCE_VST3_CAN_REPLACE_VST2=0",
-					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
-					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Name=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Desc=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Manufacturer=\\\"abhaya\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
-					"JucePlugin_ManufacturerEmail=\\\"\\\"",
-					"JucePlugin_ManufacturerCode=0x4d616e75",
-					"JucePlugin_PluginCode=0x47793168",
-					"JucePlugin_IsSynth=0",
-					"JucePlugin_WantsMidiInput=0",
-					"JucePlugin_ProducesMidiOutput=0",
-					"JucePlugin_IsMidiEffect=0",
-					"JucePlugin_EditorRequiresKeyboardFocus=0",
-					"JucePlugin_Version=1.0.0",
-					"JucePlugin_VersionCode=0x10000",
-					"JucePlugin_VersionString=\\\"1.0.0\\\"",
-					"JucePlugin_VSTUniqueID=JucePlugin_PluginCode",
-					"JucePlugin_VSTCategory=kPlugCategEffect",
-					"JucePlugin_Vst3Category=\\\"Fx\\\"",
-					"JucePlugin_AUMainType='aufx'",
-					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=ConvolutionPluginAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"ConvolutionPluginAU\\\"",
-					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_RTASCategory=0",
-					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
-					"JucePlugin_RTASDisableBypass=0",
-					"JucePlugin_RTASDisableMultiMono=0",
-					"JucePlugin_AAXIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
-					"JucePlugin_AAXCategory=0",
-					"JucePlugin_AAXDisableBypass=0",
-					"JucePlugin_AAXDisableMultiMono=0",
-					"JucePlugin_IAAType=0x61757278",
-					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"abhaya:\\ ConvolutionPlugin\\\"",
-					"JucePlugin_VSTNumMidiInputs=16",
-					"JucePlugin_VSTNumMidiOutputs=16",
-					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
-					"$(SRCROOT)/../../JuceLibraryCode",
-					"/Users/aparthy/dev/JUCE/modules",
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
-				INFOPLIST_PREPROCESS = NO;
-				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-lConvolutionPlugin";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
-				PRODUCT_NAME = "ConvolutionPlugin";
 				USE_HEADERMAP = NO;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
 			};
@@ -957,7 +661,6 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/aparthy/dev/JUCE/modules",
 					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
@@ -968,7 +671,7 @@
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
 				OTHER_LDFLAGS = "-bundle -lConvolutionPlugin";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -d arm64_$arm64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\" -I \"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
@@ -978,121 +681,6 @@
 				WRAPPER_EXTENSION = component;
 			};
 			name = Debug;
-		};
-		83248A824017C3D3A7943457 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				DEAD_CODE_STRIPPING = YES;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_NDEBUG=1",
-					"NDEBUG=1",
-					"JUCE_DISPLAY_SPLASH_SCREEN=0",
-					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x60102",
-					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_processors=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_utils=1",
-					"JUCE_MODULE_AVAILABLE_juce_core=1",
-					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
-					"JUCE_MODULE_AVAILABLE_juce_dsp=1",
-					"JUCE_MODULE_AVAILABLE_juce_events=1",
-					"JUCE_MODULE_AVAILABLE_juce_graphics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_extra=1",
-					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
-					"JUCE_VST3_CAN_REPLACE_VST2=0",
-					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
-					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Name=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Desc=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Manufacturer=\\\"abhaya\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
-					"JucePlugin_ManufacturerEmail=\\\"\\\"",
-					"JucePlugin_ManufacturerCode=0x4d616e75",
-					"JucePlugin_PluginCode=0x47793168",
-					"JucePlugin_IsSynth=0",
-					"JucePlugin_WantsMidiInput=0",
-					"JucePlugin_ProducesMidiOutput=0",
-					"JucePlugin_IsMidiEffect=0",
-					"JucePlugin_EditorRequiresKeyboardFocus=0",
-					"JucePlugin_Version=1.0.0",
-					"JucePlugin_VersionCode=0x10000",
-					"JucePlugin_VersionString=\\\"1.0.0\\\"",
-					"JucePlugin_VSTUniqueID=JucePlugin_PluginCode",
-					"JucePlugin_VSTCategory=kPlugCategEffect",
-					"JucePlugin_Vst3Category=\\\"Fx\\\"",
-					"JucePlugin_AUMainType='aufx'",
-					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=ConvolutionPluginAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"ConvolutionPluginAU\\\"",
-					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_RTASCategory=0",
-					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
-					"JucePlugin_RTASDisableBypass=0",
-					"JucePlugin_RTASDisableMultiMono=0",
-					"JucePlugin_AAXIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
-					"JucePlugin_AAXCategory=0",
-					"JucePlugin_AAXDisableBypass=0",
-					"JucePlugin_AAXDisableMultiMono=0",
-					"JucePlugin_IAAType=0x61757278",
-					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"abhaya:\\ ConvolutionPlugin\\\"",
-					"JucePlugin_VSTNumMidiInputs=16",
-					"JucePlugin_VSTNumMidiOutputs=16",
-					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
-					"$(SRCROOT)/../../JuceLibraryCode",
-					"/Users/aparthy/dev/JUCE/modules",
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-VST3.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
-				LIBRARY_STYLE = Bundle;
-				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-bundle -lConvolutionPlugin";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
-				PRODUCT_NAME = "ConvolutionPlugin";
-				USE_HEADERMAP = NO;
-				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
-				WRAPPER_EXTENSION = vst3;
-			};
-			name = Release;
 		};
 		90714BCD6055D1DFA5DBD5E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1140,228 +728,6 @@
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wreorder";
 				ZERO_LINK = NO;
-			};
-			name = Debug;
-		};
-		9308DFCB875D59AC5C052046 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_DEBUG=1",
-					"DEBUG=1",
-					"JUCE_DISPLAY_SPLASH_SCREEN=0",
-					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x60102",
-					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_processors=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_utils=1",
-					"JUCE_MODULE_AVAILABLE_juce_core=1",
-					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
-					"JUCE_MODULE_AVAILABLE_juce_dsp=1",
-					"JUCE_MODULE_AVAILABLE_juce_events=1",
-					"JUCE_MODULE_AVAILABLE_juce_graphics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_extra=1",
-					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
-					"JUCE_VST3_CAN_REPLACE_VST2=0",
-					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=0",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
-					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Name=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Desc=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Manufacturer=\\\"abhaya\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
-					"JucePlugin_ManufacturerEmail=\\\"\\\"",
-					"JucePlugin_ManufacturerCode=0x4d616e75",
-					"JucePlugin_PluginCode=0x47793168",
-					"JucePlugin_IsSynth=0",
-					"JucePlugin_WantsMidiInput=0",
-					"JucePlugin_ProducesMidiOutput=0",
-					"JucePlugin_IsMidiEffect=0",
-					"JucePlugin_EditorRequiresKeyboardFocus=0",
-					"JucePlugin_Version=1.0.0",
-					"JucePlugin_VersionCode=0x10000",
-					"JucePlugin_VersionString=\\\"1.0.0\\\"",
-					"JucePlugin_VSTUniqueID=JucePlugin_PluginCode",
-					"JucePlugin_VSTCategory=kPlugCategEffect",
-					"JucePlugin_Vst3Category=\\\"Fx\\\"",
-					"JucePlugin_AUMainType='aufx'",
-					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=ConvolutionPluginAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"ConvolutionPluginAU\\\"",
-					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_RTASCategory=0",
-					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
-					"JucePlugin_RTASDisableBypass=0",
-					"JucePlugin_RTASDisableMultiMono=0",
-					"JucePlugin_AAXIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
-					"JucePlugin_AAXCategory=0",
-					"JucePlugin_AAXDisableBypass=0",
-					"JucePlugin_AAXDisableMultiMono=0",
-					"JucePlugin_IAAType=0x61757278",
-					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"abhaya:\\ ConvolutionPlugin\\\"",
-					"JucePlugin_VSTNumMidiInputs=16",
-					"JucePlugin_VSTNumMidiOutputs=16",
-					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
-					"$(SRCROOT)/../../JuceLibraryCode",
-					"/Users/aparthy/dev/JUCE/modules",
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
-				INFOPLIST_PREPROCESS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-lConvolutionPlugin";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
-				PRODUCT_NAME = "ConvolutionPlugin";
-				USE_HEADERMAP = NO;
-				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
-			};
-			name = Debug;
-		};
-		AF1EB289650F170DE63370EA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
-				COPY_PHASE_STRIP = NO;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = /;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"_DEBUG=1",
-					"DEBUG=1",
-					"JUCE_DISPLAY_SPLASH_SCREEN=0",
-					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x60102",
-					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_processors=1",
-					"JUCE_MODULE_AVAILABLE_juce_audio_utils=1",
-					"JUCE_MODULE_AVAILABLE_juce_core=1",
-					"JUCE_MODULE_AVAILABLE_juce_data_structures=1",
-					"JUCE_MODULE_AVAILABLE_juce_dsp=1",
-					"JUCE_MODULE_AVAILABLE_juce_events=1",
-					"JUCE_MODULE_AVAILABLE_juce_graphics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_basics=1",
-					"JUCE_MODULE_AVAILABLE_juce_gui_extra=1",
-					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
-					"JUCE_VST3_CAN_REPLACE_VST2=0",
-					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
-					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
-					"JucePlugin_Build_AU=0",
-					"JucePlugin_Build_AUv3=0",
-					"JucePlugin_Build_RTAS=0",
-					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=0",
-					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Name=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Desc=\\\"ConvolutionPlugin\\\"",
-					"JucePlugin_Manufacturer=\\\"abhaya\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
-					"JucePlugin_ManufacturerEmail=\\\"\\\"",
-					"JucePlugin_ManufacturerCode=0x4d616e75",
-					"JucePlugin_PluginCode=0x47793168",
-					"JucePlugin_IsSynth=0",
-					"JucePlugin_WantsMidiInput=0",
-					"JucePlugin_ProducesMidiOutput=0",
-					"JucePlugin_IsMidiEffect=0",
-					"JucePlugin_EditorRequiresKeyboardFocus=0",
-					"JucePlugin_Version=1.0.0",
-					"JucePlugin_VersionCode=0x10000",
-					"JucePlugin_VersionString=\\\"1.0.0\\\"",
-					"JucePlugin_VSTUniqueID=JucePlugin_PluginCode",
-					"JucePlugin_VSTCategory=kPlugCategEffect",
-					"JucePlugin_Vst3Category=\\\"Fx\\\"",
-					"JucePlugin_AUMainType='aufx'",
-					"JucePlugin_AUSubType=JucePlugin_PluginCode",
-					"JucePlugin_AUExportPrefix=ConvolutionPluginAU",
-					"JucePlugin_AUExportPrefixQuoted=\\\"ConvolutionPluginAU\\\"",
-					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_CFBundleIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_RTASCategory=0",
-					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
-					"JucePlugin_RTASDisableBypass=0",
-					"JucePlugin_RTASDisableMultiMono=0",
-					"JucePlugin_AAXIdentifier=com.abhaya.ConvolutionPlugin",
-					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
-					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
-					"JucePlugin_AAXCategory=0",
-					"JucePlugin_AAXDisableBypass=0",
-					"JucePlugin_AAXDisableMultiMono=0",
-					"JucePlugin_IAAType=0x61757278",
-					"JucePlugin_IAASubType=JucePlugin_PluginCode",
-					"JucePlugin_IAAName=\\\"abhaya:\\ ConvolutionPlugin\\\"",
-					"JucePlugin_VSTNumMidiInputs=16",
-					"JucePlugin_VSTNumMidiOutputs=16",
-					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
-					"JUCER_XCODE_MAC_F6D2F4CF=1",
-					"JUCE_APP_VERSION=1.0.0",
-					"JUCE_APP_VERSION_HEX=0x10000",
-				);
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
-					"$(SRCROOT)/../../JuceLibraryCode",
-					"/Users/aparthy/dev/JUCE/modules",
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Info-VST3.plist;
-				INFOPLIST_PREPROCESS = NO;
-				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
-				OTHER_LDFLAGS = "-bundle -lConvolutionPlugin";
-				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
-				PRODUCT_NAME = "ConvolutionPlugin";
-				USE_HEADERMAP = NO;
-				VALID_ARCHS = "i386 x86_64 arm64 arm64e";
-				WRAPPER_EXTENSION = vst3;
 			};
 			name = Debug;
 		};
@@ -1522,7 +888,6 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PKGINFO_FILE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/aparthy/dev/JUCE/modules",
 					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
@@ -1534,7 +899,7 @@
 				LIBRARY_STYLE = Bundle;
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
 				OTHER_LDFLAGS = "-bundle -lConvolutionPlugin";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -d arm64_$arm64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\" -I \"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
@@ -1580,12 +945,12 @@
 					"JUCE_VST3_CAN_REPLACE_VST2=0",
 					"JUCE_STRICT_REFCOUNTEDPOINTER=1",
 					"JucePlugin_Build_VST=0",
-					"JucePlugin_Build_VST3=1",
+					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
 					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
-					"JucePlugin_Build_Standalone=1",
+					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
 					"JucePlugin_Enable_IAA=0",
 					"JucePlugin_Name=\\\"ConvolutionPlugin\\\"",
@@ -1636,7 +1001,6 @@
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
-					"/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/aparthy/dev/JUCE/modules",
 					"/Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client",
@@ -1644,7 +1008,7 @@
 				);
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_HEADER_SEARCH_PATHS = "/Users/aparthy/dev/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/aparthy/dev/JUCE/modules /Users/aparthy/dev/JUCE/modules/juce_audio_plugin_client";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abhaya.ConvolutionPlugin;
 				PRODUCT_NAME = "ConvolutionPlugin";
 				SKIP_INSTALL = YES;
@@ -1656,15 +1020,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06FE17B0F56FF989D248A3A1 = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9308DFCB875D59AC5C052046,
-				0A4D05A1817D5F74547B2310,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		41A41EDAFB28BB20197CC508 = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1688,15 +1043,6 @@
 			buildConfigurations = (
 				E7ABF1856DF03A8940072DC2,
 				08F7920D0B03D2FF4377D7BF,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		841D8B2E82EF3F84D2107C1B = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF1EB289650F170DE63370EA,
-				83248A824017C3D3A7943457,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -13,21 +13,28 @@
 ConvolutionPluginAudioProcessor::ConvolutionPluginAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
-                      #endif
-                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
-                     #endif
+                       .withInput  ("Input",  juce::AudioChannelSet::discreteChannels(ARRAY_MICROPHONES), true)
+                       .withOutput ("Output", juce::AudioChannelSet::ambisonic(ARRAY_ORDER), true)
                        )
 #endif
 {
-    auto dir = juce::File::getCurrentWorkingDirectory();
+    auto numImpulses = ARRAY_MICROPHONES * ARRAY_HARMONICS;
+    for (auto i = 0; i < numImpulses; i++)
+    {
+        convolvers.emplace_back(new juce::dsp::Convolution());
+    }
+    
+    auto dir = juce::File::getSpecialLocation(juce::File::userHomeDirectory);
 
     int numTries = 0;
 
     while (! dir.getChildFile("dev").exists() && numTries++ < 15)
         dir = dir.getParentDirectory();
+    
+    for (auto & convolver : convolvers)
+    {
+        convolver->loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 1024);
+    }
     
     convolverL.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 0);
     convolverR.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 0);
@@ -102,6 +109,11 @@ void ConvolutionPluginAudioProcessor::changeProgramName (int index, const juce::
 //==============================================================================
 void ConvolutionPluginAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
+    for (auto & convolver : convolvers)
+    {
+        convolver->prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
+    }
+    
     convolverL.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
     convolverR.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
 }
@@ -115,26 +127,17 @@ void ConvolutionPluginAudioProcessor::releaseResources()
 #ifndef JucePlugin_PreferredChannelConfigurations
 bool ConvolutionPluginAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
-  #if JucePlugin_IsMidiEffect
-    juce::ignoreUnused (layouts);
-    return true;
-  #else
     // This is the place where you check if the layout is supported.
     // In this template code we only support mono or stereo.
     // Some plugin hosts, such as certain GarageBand versions, will only
     // load plugins that support stereo bus layouts.
-    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
-     && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
+    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::discreteChannels(64)
+     && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::ambisonic(5))
+    {
         return false;
-
-    // This checks if the input layout matches the output layout
-   #if ! JucePlugin_IsSynth
-    if (layouts.getMainOutputChannelSet() != layouts.getMainInputChannelSet())
-        return false;
-   #endif
+    }
 
     return true;
-  #endif
 }
 #endif
 
@@ -157,11 +160,13 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
         auto block = juce::dsp::AudioBlock<float>(buffer);
         auto singleBlockL = block.getSingleChannelBlock(0);
         auto contextL = juce::dsp::ProcessContextReplacing<float>(singleBlockL);
-        convolverL.process(contextL);
+//        convolverL.process(contextL);
+        convolvers[0]->process(contextL);
         singleBlockL *= 6.0f;
         auto singleBlockR = block.getSingleChannelBlock(1);
         auto contextR = juce::dsp::ProcessContextReplacing<float>(singleBlockR);
-        convolverR.process(contextR);
+//        convolverR.process(contextR);
+        convolvers[1]->process(contextR);
         singleBlockR *= 6.0f;
     }
     
@@ -171,15 +176,15 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
-        auto* inputData = buffer.getReadPointer(channel);
-        for (auto samp = 0; samp < buffer.getNumSamples(); ++samp)
-        {
-            channelData[samp] = outputVol * inputData[samp];
-        }
-    }
+//    for (int channel = 0; channel < totalNumInputChannels; ++channel)
+//    {
+//        auto* channelData = buffer.getWritePointer (channel);
+//        auto* inputData = buffer.getReadPointer(channel);
+//        for (auto samp = 0; samp < buffer.getNumSamples(); ++samp)
+//        {
+//            channelData[samp] = outputVol * inputData[samp];
+//        }
+//    }
 }
 
 //==============================================================================

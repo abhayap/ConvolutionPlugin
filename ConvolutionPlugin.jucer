@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="GY1Hpf" name="ConvolutionPlugin" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
-              companyName="abhaya">
+              companyName="abhaya" pluginFormats="buildAU">
   <MAINGROUP id="vu2Zz8" name="ConvolutionPlugin">
     <GROUP id="{A4032812-1707-0B8E-6A86-DC4A7B5EFA24}" name="Source">
       <FILE id="TlFOJm" name="PluginProcessor.cpp" compile="1" resource="0"
