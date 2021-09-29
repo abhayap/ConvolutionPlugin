@@ -65,5 +65,7 @@ private:
     std::vector<std::unique_ptr<juce::dsp::Convolution>> convolvers;
     juce::dsp::ConvolutionMessageQueue messageQueue;
     
+    void processHarmonic(int harmonic, const juce::dsp::AudioBlock<float>& inBlock, juce::dsp::AudioBlock<float>& outBlock);
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConvolutionPluginAudioProcessor)
 };

@@ -6,6 +6,8 @@
   ==============================================================================
 */
 
+#include <thread>
+
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
@@ -141,6 +143,8 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
+    jassert(totalNumInputChannels >= 64);
+    jassert(totalNumOutputChannels >= 36);
 
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
@@ -153,56 +157,46 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
         buffer.clear (i, 0, buffer.getNumSamples());
     }
     
-    auto outBuffer = juce::AudioBuffer<float> {ARRAY_HARMONICS, buffer.getNumSamples()};
+    auto outBuffer = juce::AudioBuffer<float> {buffer.getNumChannels(), buffer.getNumSamples()};
     outBuffer.clear();  // buffer data is not empty when initialized
-    auto tmpBuffer = juce::AudioBuffer<float> {1, buffer.getNumSamples()};
     
     // create blocks for the buffers - no memory copied or created
     auto inBlock = juce::dsp::AudioBlock<float>(buffer);
     auto outBlock = juce::dsp::AudioBlock<float>(outBuffer);
-    auto tmpBlock = juce::dsp::AudioBlock<float>(tmpBuffer);
     
-    for (auto harm = 0; harm < ARRAY_HARMONICS; harm++)
-    {
-        for (auto mic = 0; mic < ARRAY_MICROPHONES; mic++)
-        {
-            auto idx = (harm * ARRAY_MICROPHONES) + mic;
-            auto singleInBlock = inBlock.getSingleChannelBlock(mic);
-            auto context = juce::dsp::ProcessContextNonReplacing<float>(singleInBlock, tmpBlock);
-            convolvers[idx]->process(context);
-            outBlock.getSingleChannelBlock(harm).add(tmpBlock);
-        }
-    }
+    std::vector<std::thread> threads;
     
     if (reverbOn)
     {
-        auto block = juce::dsp::AudioBlock<float>(buffer);
-        auto singleBlockL = block.getSingleChannelBlock(0);
-        auto contextL = juce::dsp::ProcessContextReplacing<float>(singleBlockL);
-//        convolverL.process(contextL);
-        convolvers[0]->process(contextL);
-        singleBlockL *= 6.0f;
-        auto singleBlockR = block.getSingleChannelBlock(1);
-        auto contextR = juce::dsp::ProcessContextReplacing<float>(singleBlockR);
-//        convolverR.process(contextR);
-        convolvers[1]->process(contextR);
-        singleBlockR *= 6.0f;
+        for (auto harm = 0; harm < ARRAY_HARMONICS; harm++)
+        {
+            threads.push_back(std::thread(&ConvolutionPluginAudioProcessor::processHarmonic, this, harm, std::ref(inBlock), std::ref(outBlock)));
+        }
+        
+        for (auto &th : threads)
+        {
+          th.join();
+        }
+        
+        //outBuffer.applyGain(1.0f/64.0f);
+        buffer.makeCopyOf(outBuffer, true);
     }
     
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
+    buffer.applyGain(outputVol);
+}
+
+void ConvolutionPluginAudioProcessor::processHarmonic(int harmonic, const juce::dsp::AudioBlock<float>& inBlock, juce::dsp::AudioBlock<float>& outBlock)
+{
+    auto tmpBuffer = juce::AudioBuffer<float> {1, static_cast<int> (inBlock.getNumSamples())};
+    auto tmpBlock = juce::dsp::AudioBlock<float>(tmpBuffer);
+    
+    for (auto mic = 0; mic < ARRAY_MICROPHONES; mic++)
     {
-        auto* channelData = buffer.getWritePointer (channel);
-        auto* inputData = buffer.getReadPointer(channel);
-        for (auto samp = 0; samp < buffer.getNumSamples(); ++samp)
-        {
-            channelData[samp] = outputVol * inputData[samp];
-        }
+        auto idx = (harmonic * ARRAY_MICROPHONES) + mic;
+        auto singleInBlock = inBlock.getSingleChannelBlock(mic);
+        auto context = juce::dsp::ProcessContextNonReplacing<float>(singleInBlock, tmpBlock);
+        convolvers[idx]->process(context);
+        outBlock.getSingleChannelBlock(harmonic).add(tmpBlock);
     }
 }
 

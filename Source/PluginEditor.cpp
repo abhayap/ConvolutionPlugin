@@ -19,7 +19,7 @@ ConvolutionPluginAudioProcessorEditor::ConvolutionPluginAudioProcessorEditor (Co
     
     // define parameters of the slider
     midiVolume.setSliderStyle(juce::Slider::LinearBarVertical);
-    midiVolume.setRange(0.0, 3.0, 0.1);
+    midiVolume.setRange(0.0, 20.0, 0.1);
     midiVolume.setTextBoxStyle(juce::Slider::NoTextBox, false, 90, 0);
     midiVolume.setPopupDisplayEnabled(true, false, this);
     midiVolume.setTextValueSuffix(" Volume");
