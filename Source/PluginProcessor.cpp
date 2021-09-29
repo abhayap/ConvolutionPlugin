@@ -149,9 +149,33 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
     // when they first compile a plugin, but obviously you don't need to keep
     // this code if your algorithm always overwrites all the output channels.
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+    {
         buffer.clear (i, 0, buffer.getNumSamples());
+    }
     
-    if (reverbOn) {
+    auto outBuffer = juce::AudioBuffer<float> {ARRAY_HARMONICS, buffer.getNumSamples()};
+    outBuffer.clear();  // buffer data is not empty when initialized
+    auto tmpBuffer = juce::AudioBuffer<float> {1, buffer.getNumSamples()};
+    
+    // create blocks for the buffers - no memory copied or created
+    auto inBlock = juce::dsp::AudioBlock<float>(buffer);
+    auto outBlock = juce::dsp::AudioBlock<float>(outBuffer);
+    auto tmpBlock = juce::dsp::AudioBlock<float>(tmpBuffer);
+    
+    for (auto harm = 0; harm < ARRAY_HARMONICS; harm++)
+    {
+        for (auto mic = 0; mic < ARRAY_MICROPHONES; mic++)
+        {
+            auto idx = (harm * ARRAY_MICROPHONES) + mic;
+            auto singleInBlock = inBlock.getSingleChannelBlock(mic);
+            auto context = juce::dsp::ProcessContextNonReplacing<float>(singleInBlock, tmpBlock);
+            convolvers[idx]->process(context);
+            outBlock.getSingleChannelBlock(harm).add(tmpBlock);
+        }
+    }
+    
+    if (reverbOn)
+    {
         auto block = juce::dsp::AudioBlock<float>(buffer);
         auto singleBlockL = block.getSingleChannelBlock(0);
         auto contextL = juce::dsp::ProcessContextReplacing<float>(singleBlockL);
