@@ -63,9 +63,7 @@ private:
     static constexpr int ARRAY_ORDER = 5;
     
     std::vector<std::unique_ptr<juce::dsp::Convolution>> convolvers;
-    
-    juce::dsp::Convolution convolverL;
-    juce::dsp::Convolution convolverR;
+    juce::dsp::ConvolutionMessageQueue messageQueue;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ConvolutionPluginAudioProcessor)
 };

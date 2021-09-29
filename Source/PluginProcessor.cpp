@@ -15,13 +15,14 @@ ConvolutionPluginAudioProcessor::ConvolutionPluginAudioProcessor()
      : AudioProcessor (BusesProperties()
                        .withInput  ("Input",  juce::AudioChannelSet::discreteChannels(ARRAY_MICROPHONES), true)
                        .withOutput ("Output", juce::AudioChannelSet::ambisonic(ARRAY_ORDER), true)
-                       )
+                       ),
 #endif
+    messageQueue(100)
 {
     auto numImpulses = ARRAY_MICROPHONES * ARRAY_HARMONICS;
     for (auto i = 0; i < numImpulses; i++)
     {
-        convolvers.emplace_back(new juce::dsp::Convolution());
+        convolvers.emplace_back( new juce::dsp::Convolution(juce::dsp::Convolution::Latency {256}, messageQueue) );
     }
     
     auto dir = juce::File::getSpecialLocation(juce::File::userHomeDirectory);
@@ -35,9 +36,6 @@ ConvolutionPluginAudioProcessor::ConvolutionPluginAudioProcessor()
     {
         convolver->loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 1024);
     }
-    
-    convolverL.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 0);
-    convolverR.loadImpulseResponse(dir.getChildFile("dev").getChildFile("resources").getChildFile("large_church.wav"), juce::dsp::Convolution::Stereo::no, juce::dsp::Convolution::Trim::no, 0);
 }
 
 ConvolutionPluginAudioProcessor::~ConvolutionPluginAudioProcessor()
@@ -113,9 +111,6 @@ void ConvolutionPluginAudioProcessor::prepareToPlay (double sampleRate, int samp
     {
         convolver->prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
     }
-    
-    convolverL.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
-    convolverR.prepare({ sampleRate, (juce::uint32) samplesPerBlock, 1 });
 }
 
 void ConvolutionPluginAudioProcessor::releaseResources()
@@ -176,15 +171,15 @@ void ConvolutionPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& bu
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
-//    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-//    {
-//        auto* channelData = buffer.getWritePointer (channel);
-//        auto* inputData = buffer.getReadPointer(channel);
-//        for (auto samp = 0; samp < buffer.getNumSamples(); ++samp)
-//        {
-//            channelData[samp] = outputVol * inputData[samp];
-//        }
-//    }
+    for (int channel = 0; channel < totalNumInputChannels; ++channel)
+    {
+        auto* channelData = buffer.getWritePointer (channel);
+        auto* inputData = buffer.getReadPointer(channel);
+        for (auto samp = 0; samp < buffer.getNumSamples(); ++samp)
+        {
+            channelData[samp] = outputVol * inputData[samp];
+        }
+    }
 }
 
 //==============================================================================
